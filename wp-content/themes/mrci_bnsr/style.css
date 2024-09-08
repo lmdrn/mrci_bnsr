@@ -1,0 +1,2662 @@
+/*
+Theme Name: My Website Theme
+Theme URI: https://mercibonsoir.com
+Author: Léa Medrano
+Author URI: https://leamedrano.myportfolio.com/
+Description: mrci_bnsr
+Text Domain: mrci_bnsr
+Requires at least: WordPress 5.6
+Version: 1.0
+*/
+
+/****
+WP CUSTOM
+ */
+
+.top-header {
+    position: fixed;
+    top: 0;
+}
+
+.admin-bar .top-header {
+    top: 32px;
+}
+
+/*****
+VARS
+ */
+
+html {
+    font-size: 18px;
+}
+
+:root {
+    --main-font: 'Manrope', sans-serif;
+    --accent-font: "Maax Medium";
+    --accent-bold-font: "Maax Bold";
+    --accent-font-light: "Maax Light";
+    --main-color: #003A70;
+    --accent-color: #2AD2C9;
+    --basic-color: #ffffff;
+    --container-width-s: 1180px;
+    --container-width-m: 1420px;
+    --header-height: 120px;
+}
+
+/*****
+GENERAL
+ */
+
+body {
+    margin-bottom: -15px;
+    font-family: var(--main-typo);
+}
+
+section {
+    padding: var(--margin-m) 0;
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--basic-color);
+}
+
+p.ge__dark-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+p.ge__dark-link:hover, p.ge__dark-link:active {
+    color: var(--main-color) !important;
+}
+
+a.ge__turquoise-link {
+    text-decoration: none;
+    color: var(--main-color);
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+a.ge__turquoise-link:hover, p.ge__turquoise-link:active {
+    color: var(--accent-color) !important;
+}
+
+li {
+    list-style: none;
+}
+
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*****
+DISPOSITION
+ */
+
+.di__full-height {
+    min-height: calc( 100vh - var(--header-height) );
+    height: calc( 100vh - var(--header-height) );
+    padding: 0 !important;
+}
+
+.di__container-small {
+    width: var(--container-width-s);
+    margin: 0 auto;
+}
+
+.di__container-big {
+    width: var(--container-width-m);
+    margin: 0 auto;
+}
+
+.di__section-main {
+    background-color: var(--main-color);
+}
+
+.di__section-accent {
+    background-color: var(--accent-color);
+}
+
+.di__section-basic {
+    background-color: var(--basic-color);
+}
+
+.di__padding-regular {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.di__padding-top-regular {
+    padding-top: 100px;
+}
+
+.di__padding-basic {
+    padding-top: 75px;
+    padding-bottom: 100px;
+}
+
+.di__padding-small {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.di__padding-x-small {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.di__flex-column {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.di__flex-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.di__flex-around {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.di__flex-between {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.di__flex-start-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/*****
+TYPOS
+ */
+
+h1, .ty__h1 {
+    font-family: var(--accent-bold-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 64px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--accent-color);
+    margin-bottom: 33px;
+}
+
+.di__section-accent h1 {
+    color: var(--basic-color);
+}
+
+h2, .ty__h2 {
+    font-family: var(--accent-bold-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 64px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--accent-color);
+}
+
+.ortho-services-listing .ortho-service-action {
+    position: relative;
+    overflow: hidden;
+}
+
+svg {
+    width: 100%;
+}
+
+.left svg {
+    transform: translateX(-35%);
+    width: 150%;
+    position: relative;
+}
+
+.right svg {
+    transform: rotate(180deg);
+    width: 150%;
+    position: relative;
+}
+
+.ortho-h3-line {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 25px;
+    transition: all ease 2000ms;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    overflow: hidden;
+}
+
+.ortho-h3-line.reveal {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    left: 0;
+    top: 0;
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+}
+  
+
+.left .ortho-h3-line {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 20px;
+    position: relative;
+    width: 0%;
+    margin-bottom: 25px;
+    transform: translateX(0%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 2000ms;
+}
+
+.ortho-h3-line.reveal-reverse {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.ortho-h3-bubble {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    position: absolute;
+    bottom: -35px;
+    left: 79.3%;
+    z-index: 10;
+}
+
+.left .ortho-h3-line {
+    margin-left: -28%;
+}
+
+.left .ortho-h3-bubble {
+    left: auto;
+    right: 108.16%;
+}
+
+h3, .ty__h3 {
+    font-family: var(--accent-bold-font);
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 32px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+h4, .ty__h4 {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+h5, .ty__h5 {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+h6, .ty__h6 {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+p, .ty__p {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+.ty__big-text {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+.ty__small-text {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+/*****
+BUTTONS
+ */
+
+
+.el__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+a.el__btn {
+    font-family: var(--accent-font-light);
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 26px;
+    height: 50px;
+    width: 263px;
+    padding:  0 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--basic-color);
+    padding: 0px 15px;
+    gap: 10px;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+.el__btn-accent {
+    background: var(--accent-color);
+}
+
+.el__btn-accent:hover {
+    background: var(--main-color);
+}
+
+.el__btn-form {
+    margin: 20px 0;
+}
+
+.el__btn-form:hover {
+    background: var(--accent-color);
+    color: var(--main-color);
+}
+
+.el__btn-main {
+    background: var(--main-color);
+}
+
+a.underline-btn {
+    font-family: var(--accent-bold-font);
+    font-style: normal;
+    font-weight: 900;
+    text-transform: underline !important;
+    color: var(--main-color);
+}
+
+a.underline-btn:hover  {
+    font-family: var(--accent-bold-font);
+    font-style: normal;
+    font-weight: 900;
+    text-transform: underline !important;
+    color: var(--accent-color);
+}
+
+/*****
+SECTIONS
+ */
+
+ .sec__bg-cover {
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 960px;
+ }
+
+/* HEADER */
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 60px;
+    background-color: white !important;
+    animation-name: stickyslidein;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 11%);
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+body.admin-bar.logged-in .sticky{
+    padding-top: 60px;
+}
+
+body .sticky{
+    padding-top: 25px;
+}
+
+@keyframes stickyslidein {
+    from {
+        margin-top: -100px;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+.contact-mobile {
+    display: none;
+}
+
+.navbar-nav .menu-item:lang(de-DE) {
+    padding-top: 15px;
+}
+
+.navbar:lang(de-DE) {
+    align-items: center;
+}
+
+.navbar {
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 25px 40px;
+    z-index: 99;
+}
+
+.navbar a {
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--main-color);
+}
+
+.navbar .custom-logo-link img {
+    width: auto;
+    height: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--main-color);
+    padding: 0 20px;
+}
+
+.navbar-light .navbar-nav .menu-item:last-child {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+    margin: 0 20px;
+    height: 50px;
+    border-radius: 50px;
+    color: var(--basic-color);
+    background-color: var(--accent-color);
+    transition: all .5s ease;
+}
+
+.navbar-light .navbar-nav .menu-item:last-child:hover {
+    background-color: var(--main-color);
+}
+
+.navbar-light .navbar-nav .menu-item:last-child a {
+    color: var(--basic-color);
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 10px;
+    padding-top: 2px;
+}
+
+
+.navbar-light .navbar-nav .menu-item:last-child::before {
+    background: url(assets/imgs/Calendar.png);
+    background-size: cover;
+    content: '';
+    display: block;
+    height: 25px;
+    width: 23px;
+}
+
+#menu-header, #menu-header-de {
+    align-items: center;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+    color: var(--accent-color);
+}
+
+.el__nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.el__btn-navbar {
+    width: 22.85px;
+    height: 25px;  
+}
+
+.el__nav-bar > a > p {
+    color: var(--basic-color);
+}
+
+.burger-mobile {
+    display: none;
+}
+
+/* ELEMENT service listing */
+
+.ortho-services-listing .ortho-service-action-text, .ortho-services-listing .ortho-service-action-img {
+    width: 50%;
+}
+
+.ortho-services-listing a.el__btn {
+    margin: 0;
+    height: unset;
+    padding: 15px;
+    padding-bottom: 18px;
+    width: 205px;
+}
+
+.ortho-services-listing a.el__btn:hover {
+    background-color: var(--accent-color);
+}
+
+.left {
+    flex-direction: row-reverse;
+}
+
+.left .ortho-service-action-text {
+    padding: 0 10% 0 5%;
+}
+
+.ortho-service-action-text {
+    padding: 0 5% 0 10%;
+    z-index: 98;
+}
+
+.ortho-service-action-text p {
+    padding-bottom: 25px;
+}
+
+.ortho-service-action-img img {
+    max-height:  553px;
+}
+
+/* PAGE home */
+
+.ortho-accueil-interligne p {
+    color: var(--basic-color);
+}
+
+.el__interligne-pictos > div {
+    align-items: flex-start;
+}
+
+.ortho-accueil-chiffres {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ortho-accueil-chiffre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ortho-accueil-chiffre .number {
+    border: 18px solid #2AD2C9;
+    width: 200px;
+    height: 200px;
+    font-family: var(--accent-bold-font);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin-bottom: 25px;
+}
+
+.ortho-accueil-chiffre .number-text {
+    max-width: 220px;
+    text-align: center;
+}
+
+.home .ortho-accueil-services {
+    height: 641px;
+    width: 100%;
+}
+
+#bannerService {
+    transition-duration: 500ms;
+}
+
+.home .ortho-accueil-service.picto-3 img {
+    transform: rotate(90deg);
+}
+
+.home .ortho-accueil-service.picto-4 img {
+    height: 80%;
+    margin-right: 10px;
+}
+
+.home .ortho-accueil-service.picto-4 a:hover .ortho-accueil-service-picto img {
+    height: 85%;
+}
+
+.postid-71 .ortho-service-picto img {
+    height: 80%;
+    margin-right: 10px;
+}
+
+.ortho-accueil-services {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all ease 2000ms;
+}
+
+.ortho-accueil-services img {
+    height: 100%;
+    overflow: hidden;
+}
+
+.ortho-accueil-services.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hide-service {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ortho-accueil-service {
+    width: 25%;
+    padding: 20px 0;
+}
+
+.ortho-accueil-service a {
+    margin: 0 40px;
+    text-align: center;
+}
+
+.ortho-accueil-service:last-child a {
+    margin: 0 10px;
+}
+
+.ortho-accueil-service a:hover {
+    text-decoration: none;
+}
+
+.ortho-accueil-service a:hover h3 {
+    color: var(--basic-color);
+    transition: all .5s ease;
+}
+
+.ortho-accueil-service-picto {
+    background-color: var(--basic-color);
+    width: 163px;
+    height: 163px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.ortho-accueil-service-picto img {
+    height: 50%;
+    width: auto;
+    transition: all .5s ease;
+}
+
+/* .partner-picto {
+    background-color: transparent !important;
+} */
+
+.ortho-accueil-service a:hover .ortho-accueil-service-picto img {
+    height: 55%;
+}
+
+.ortho-accueil-slider img {
+    max-height: 480px;
+    max-width: 720px;
+}
+
+.ortho-accueil-slider a.el__btn {
+    margin: 0 auto;
+}
+
+.ortho-accueil-slider a.el__btn:hover {
+    background-color: var(--basic-color);
+    color: var(--main-color);
+    font-weight: 600 !important;
+}
+
+.complex .news-slider {
+    margin: 75px 0;
+    width: 62vw;
+    height: 600px;
+}
+
+.ortho-actu-listing h2 {
+	margin-bottom: 50px;
+}
+
+.news-slider .slick-slide img {
+	height: 600px;
+	object-fit: contain;
+}
+
+.simple .news-slider .slick-slide img {
+	height: unset;
+}
+
+.el__article {
+    display: flex;
+    align-items: flex-start;
+}
+
+.el__article .ortho-articles-infos {
+    margin-left: 120px;
+}
+
+.slick-slide a {
+    text-decoration: none;
+}
+
+.ortho-accueil-slider .read-more {
+    color: var(--basic-color);
+    text-align: left;
+    margin-top: 110px;
+}
+
+/* PAGE service */
+
+.ortho-service-header {
+    height: 65vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 50%;
+    position: relative;
+}
+
+.ortho-service-picto {
+    width: 200px;
+    height: 200px;
+    background-color: var(--basic-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -11%;
+    right: 17%;
+}
+
+.ortho-service-picto img {
+    height: 70%;
+    width: auto;
+}
+
+.ortho-service-picto img[alt*="orthopédie service pieds et chaussures suisse romande orthoconcept"] {
+    transform: rotate(90deg);
+ }
+
+.ortho-service-outro {
+    text-align: center;
+}
+
+
+.ortho-service-outro a.el__btn {
+    margin: 0 auto;
+    margin-top: 43px;
+}
+
+.ortho-service-outro a.el__btn:hover {
+    background-color: var(--basic-color);
+    color: var(--main-color);
+    font-weight: 600 !important;
+}
+
+/* PAGE actualités */
+
+.jobs-listing {
+    padding-top: 0 !important;
+}
+
+.ortho-accueil-services {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ortho-actu-listing-title h2, .ortho-actu-news-title h2 {
+    color: var(--basic-color);
+}
+
+.ortho-actu-listing .newsi:has(.complex) {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.ortho-actu-listing .news .ortho-articles-infos {
+    margin-bottom: 100px;
+}
+
+.ortho-actu-listing .news .ortho-articles-infos h2{
+    color: var(--accent-color);
+}
+
+.ortho-actu-listing .news .ortho-articles-infos p {
+    color: white;
+}
+
+.ortho-actu-listing a {
+    text-decoration: none;
+}
+
+.ortho-articles-infos .read-more {
+    color: var(--basic-color);
+    text-align: left;
+    margin-top: 110px;
+}
+
+.jobs {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.jobs:last-child {
+    border-bottom: none;
+}
+
+.jobs .ortho-articles-infos {
+    position: relative;
+}
+
+.jobs .ortho-articles-infos .el__btn-accent {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    max-width: 205px;
+}
+
+.jobs .ortho-articles-infos .ortho-articles-text .job-title {
+    margin-bottom: 40px;
+}
+
+.jobs .ortho-articles-infos .ortho-articles-text .job-title h3 {
+    margin-bottom: 0;
+    width: 80%;
+}
+
+.jobs .ortho-articles-infos .ortho-articles-text p {
+    width: 74%;
+}
+
+.jobs .ortho-articles-infos .ortho-articles-text .job-title .location {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* SINGLE actualité */
+
+.ortho-articles-img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ortho-articles-img img {
+    width: 49%;
+}
+
+.ortho-articles-infos.simple {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.ortho-articles-infos.simple .article-txt {
+	width: 50%;
+    	margin-right: 50px;
+}
+
+.ortho-articles-infos.simple .news-slider {
+	width: 50%;
+}
+
+.ortho-articles-infos .article-txt {
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: white;
+}
+
+/* PAGE contact */
+
+.ortho-contact-location .ortho-contact-location-link {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.ortho-contact-infos-services {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.ortho-contact-infos-service {
+    margin: 0 10px;
+}
+
+.ortho-contact-service {
+    transition: all .5s ease;
+}
+
+.ortho-contact-service .ortho-contact-service-img img {
+    max-width: 65px;
+    transition: all .5s ease;
+    height: auto;
+    padding: 15px;
+    object-position: center;
+    overflow: visible;
+}
+
+.succursales-contact {
+    display: none;
+}
+
+.succursale-container.active {
+    overflow: scroll;
+    height: 640px;
+}
+
+.ortho-contact-service:first-child .ortho-contact-service-img:first-child img {
+    max-width: 62px;
+    padding: 14px;
+    padding-top: 10px;
+}
+
+.ortho-contact-service:hover .ortho-contact-service-img img {
+    padding: 13px;
+}
+
+.ortho-contact-service:first-child:hover .ortho-contact-service-img:first-child img {
+    padding: 12px;
+    padding-top: 8px;
+}
+
+.ortho-contact-service a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.ortho-contact-infos-rdv {
+    padding: 40px 0;
+}
+
+.ortho-contact-infos-rdv a.el__btn:hover {
+    background-color: var(--basic-color);
+    color: var(--main-color);
+    font-weight: 600 !important;
+}
+
+.ortho-contact-infos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.ortho-contact-infos-adress, .ortho-contact-infos-contact {
+    width: 49%;
+}
+
+.ortho-contact-picto {
+    margin: 0 10px;
+}
+
+.ortho-contact-picto .contact-img{
+    background-color: var(--basic-color);
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.ortho-contact-picto .contact-img img {
+    height: 70%;
+    width: auto;
+}
+
+.ortho-contact-picto .contact-img img[alt*="compression"] {
+    height: 100%;
+    margin-right: 6px;
+}
+
+.ortho-contact-picto .contact-img img[alt*="pied/chaussure"] {
+    height: 100%;  
+    transform: rotate(90deg);
+}
+
+/* VIDEO */
+
+video {
+    object-fit: cover;
+    height: 80vh !important;
+}
+
+.el__video-mobile {
+    display: none;
+}
+
+.el__video-mobile.videoActive {
+    display: block;
+}
+
+video.el__video-mobile {
+    height: 100vh !important;
+}
+
+.el__video.videoActive {
+    display: none;
+}
+
+.video-container {
+    position: relative;
+}
+
+.service-template-default .video-container {
+    margin-bottom: -6px !important;
+}
+
+.unmute {
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 50px rgb(0 40 100 / 40%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.unmute img {
+    width: auto;
+    height: 60%;
+    opacity: 0.3;
+}
+
+.unmute img.play {
+    margin-left: 20px;
+}
+
+.unmute img:last-child {
+    display: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.active {
+    display: block !important;
+}
+
+.socials_newsletter {
+    display: none;
+}
+
+/* POPUP */
+  
+.modal{
+    height: 100vh;
+    width:100%;
+    display: grid;
+    place-items: center;
+    z-index: 99;
+    transition: all .5s;
+    visibility: visible;
+    opacity: 1;
+}
+
+  
+.modal__button:hover{
+    background-color: var(--first-color-alt);
+}
+  
+.modal__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsla(177, 67%, 49%, 0.9);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: flex-end;
+    overflow: auto;
+    transition: all .5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal__content{
+    position: relative;
+    background-color: var(--basic-color);
+    text-align: center;
+    padding: 3rem;
+    transition: all .5s;
+    width: 50%;
+    margin: auto;
+    transform: translateY(10%);
+}
+
+.modal__content h2 {
+    text-align: left;
+    text-transform: lowercase;
+}
+
+.modal__content p {
+    text-align: left;
+    margin: 25px 0;
+    line-height: 28px;
+    font-size: 16px;
+}
+
+div.close-modal:hover {
+    background-color: var(--accent-color);
+}
+
+div.close-modal {
+    margin-left: auto;
+    width: 200px;
+    font-family: var(--accent-font-light);
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 26px;
+    height: 50px;
+    width: 263px;
+    padding:  0 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--basic-color);
+    padding: 0px 15px;
+    gap: 10px;
+    text-decoration: none;
+    transition: all .5s ease;
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+/* Show modal */
+.show-modal{
+    visibility: visible;
+    opacity: 1;
+    background-color: hsla(177, 67%, 49%, 0.8);
+    transition: all .5s;
+}
+
+.show-modal .modal__content{
+    transition: all .5s;
+    transform: translateY(0);
+}
+
+.modal.lowZindex {
+    z-index:0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+    position:unset;
+    height: 0;
+}
+/* MAP */
+
+.marker {
+    background-image: url("assets/imgs/Pointer.png");
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+  
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px 20px 25px;
+}
+
+.mapboxgl-popup-content a {
+    color: var(--main-color);
+    outline: none;
+    border: none;
+}
+
+.icon-dc {
+    background: #3bb2d0;
+}
+
+.marker-active {
+    width: 40px;
+    height: 40px;
+    background-image: url("assets/imgs/Pointer-active.png");
+    transition: 300ms ease-in-out;
+}
+
+.canton-actif p {
+    color: var(--accent-color);
+}
+
+.succursales .ortho-contact-location-link p {
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    color: var(--main-color);
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.succursales {
+    height: 0;
+    opacity: 0;
+    transition: all ease;
+}
+
+.canton-actif .succursales {
+    height: 100%;
+    opacity: 1;
+}
+
+/* FORM */
+
+.nf-form-content .nf-field-container #nf-field-9-wrap .nf-field-element .ninja-forms-field {
+    background-color: transparent !important;
+}
+
+.nf-before-form-content, .nf-form-title h3 {
+    margin-left: 8%;
+}
+
+.nf-form-title h3 {
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 72px;
+    color: var(--accent-color);
+    margin-bottom: 87px;
+}
+
+.nf-field-element input:not([type=button]), .nf-form-content textarea {
+    /* background: transparent !important; */
+    border: 1px solid var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+
+.nf-field-label label, .nf-error-msg, .ninja-forms-req-symbol, .nf-form-fields-required {
+    color: var(--accent-color) !important;
+}
+
+.nf-form-fields-required span {
+    font-weight: 700;
+    font-size: large;
+}
+
+.nf-error.field-wrap .nf-field-element::after {
+    background: var(--accent-color) !important;
+}
+
+.nf-field-element select.ninja-forms-field.nf-element {
+    border: 1px solid var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+
+.nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea {
+    background: var(--basic-color) !important;
+}
+
+.nf-form-content button, .nf-form-content input[type=button], .nf-form-content input[type=submit] {
+    font-family: var(--accent-font-light);
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 20px;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--basic-color) !important;
+    padding: 15px 45px !important;
+    gap: 10px;
+    float: right;
+    border-radius: 50px;
+    text-decoration: none;
+    background: var(--main-color) !important;
+}
+
+.nf-form-content .list-select-wrap>div div:after {
+    content: "\f04b" !important;
+    transform: rotate(90deg);
+    color: var(--accent-color);
+}
+
+.nf-field-element .ninja-forms-field {
+    background-color: transparent !important;
+}
+
+.nf-form-fields-required {
+    display: none;
+}
+
+a span.s1, .p3 a {
+    color: var(--accent-color);
+}
+
+a span.s1:hover, .p3 a:hover {
+    color: var(--main-color);
+    font-weight: 500;
+    transition: all ease 500ms;
+}
+
+a:hover {
+    text-decoration: none;
+}
+/* FOOTER */
+#menu-footer {
+    padding-left: 0;
+    margin-left: -35%;
+}
+
+
+#menu-footer-de-2 {
+    padding-left: 0 !important;
+}
+
+.el__prescripteurs .el__prescripteurs-content {
+    align-items: baseline;
+    justify-content: flex-start;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.el__prescripteurs .el__prescripteurs-content h3 {
+    color: var(--basic-color);
+    padding-bottom: 21px;
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 20px;
+    color: var(--basic-color);
+}
+
+.el__prescripteur-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--basic-color);
+}
+
+.el__prescripteurs .el__prescripteurs-content .el__prescripteurs-picto {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    transform: rotate(180deg);
+    transition: transform 300ms ease;
+}
+
+.el__prescripteurs .el__prescripteurs-content .el__prescripteurs-picto.active {
+    transition: transform 300ms ease;
+    transform: rotate(0deg);
+}
+
+.el__prescripteurs .el__prescripteurs-list p, .el__prescripteurs .el__prescripteurs-list {
+    color: var(--basic-color);
+}
+
+.el__prescripteurs .el__prescripteurs-list {
+    display: block;
+    border-bottom: 1px solid var(--basic-color);
+    padding: 21px 0;
+}
+
+.el__prescripteurs .el__prescripteurs-list .di__flex-around {
+    align-items: flex-start;
+}
+
+.el__prescripteurs .el__prescripteurs-list a {
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration: none;
+}
+
+.useful-links, .ordo_list, .catalogue_list {
+    margin-top: 20px;
+} 
+
+.catalogue_list a:first-child {
+    margin-left: 8px;
+}
+
+.catalogue_list a:first-child:lang(de-DE) {
+    margin-left: -10px;
+}
+
+.ordo_list a {
+    margin-left: 10px;
+}
+
+.ordo_list {
+    flex-direction: column;
+}
+
+.useful-links {
+    align-items: flex-start;
+}
+
+.useful-links, .catalogue_list, .ordo-list {
+    padding-left: 19px;
+}
+
+.el__prescripteurs .el__prescripteurs-list a:hover {
+    color: var(--accent-color);
+}
+
+.el__footer-link-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--basic-color);
+}
+
+.el__footer-link-img {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.el__socials .social {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+}
+
+.misc_pages {
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--accent-color);
+    padding-top: 56px;
+}
+
+.misc_pages a {
+    font-family: var(--accent-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--accent-color);
+}
+
+.misc_pages a:hover {
+    color: var(--basic-color);
+}
+
+.socials_pictos {
+    display: flex;
+    align-items: center;
+    margin-right: 35px;
+}
+
+.uptoyou {
+    text-align: center;
+    color: var(--basic-color);
+    padding-bottom: 20px;
+    font-size: 12px;
+}
+
+.uptoyou a {
+    color: var(--accent-color);
+}
+
+.wpml-ls-menu-item .nav-link {
+    padding: 0.5rem;
+}
+
+
+.el__copyrights p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--accent-color);
+}
+
+
+/* NEW PAGE CONTACT */
+
+.succursale-card {
+    background: white;
+    box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+    padding: 30px;
+    border-radius: 2px;
+    margin: 30px 0;
+    width: 30%;
+    height: 450px;
+    transition: all ease 500ms;
+    cursor: pointer;
+}
+
+.succursale-card a {
+    color: var(--accent-color);
+}
+
+.succursale-card:hover a {
+    color: var(--basic-color);
+}
+
+.succursale-card:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-color);
+}
+
+.picto-contact-new {
+    justify-content: flex-start;
+    padding-top: 10px;
+    width: 100% !important;
+}
+
+.picto-contact-new .ortho-contact-picto {
+    margin: 0;
+    margin-right: 10px;
+}
+
+a.contact-link-map {
+    color:var(--main-color);
+    text-decoration: none;
+    transition: all ease 500ms;
+}
+
+a.contact-link-map:hover {
+    color:var(--accent-color);
+}
+
+.popupContent {
+    color: var(--main-color) !important;
+}
+
+.popupContent h3 {
+    color: var(--accent-color) !important;
+}
+
+/* RESPONSIVE */
+
+
+@media (max-width: 1660px) {
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 1560px) {
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 1440px) {
+    :root {
+        --container-width-s: 940px;
+        --container-width-m: 1180px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 16px;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child {
+        margin: 0;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child a {
+        font-size: 16px !important;
+    }
+
+    .navbar #mainNavbar {
+        margin-left: 120px;
+    }
+
+    .custom-logo-link {
+        height: 50px;
+    }
+
+    #menu-header, #menu-header-de {
+        align-items: flex-end;
+    }
+
+    #menu-header li, #menu-header-de li {
+        padding-bottom:  5px;
+    }
+    
+    .navbar-light .navbar-nav .menu-item:last-child {
+        padding: 5px 10px;
+        height: auto;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child {
+        padding: 10px 10px;
+        padding-bottom: 10px !important;
+    }
+}
+
+@media (max-width: 1350px) {
+    .navbar #mainNavbar {
+        margin-left: 60px;
+    }
+
+}
+
+@media (max-width: 1280px) {
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child::before {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 16px;
+        width: 14px;
+    }
+
+    .ortho-accueil-chiffres.di__flex-between {
+        align-items: flex-start;
+    }
+
+    .ortho-accueil-chiffre {
+        max-width: 20%;
+    }
+
+    .ortho-accueil-chiffre h3 {
+        text-align: center;
+    }
+
+    .navbar #mainNavbar {
+        margin-left: 50px;
+    }
+
+    .ortho-accueil-service-picto {
+        width: 100px;
+        height: 100px;
+    }
+
+    :root {
+        --container-width-s: 700px;
+        --container-width-m: 940px;
+    }
+
+    .ortho-actu-listing .news img {
+        width: 45%;
+    }
+
+    .ortho-accueil-slider img {
+        max-height: 480px;
+        max-width: 433px;
+    }
+
+    .succursale-card {
+        width: 48%;
+    }
+    
+}
+
+
+@media (max-width: 1150px) {
+    .custom-logo-link {
+        height: 40px;
+    }
+
+    .navbar #mainNavbar {
+        margin-left: 0px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        padding: 0 5px;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child {
+        padding: 5px 10px;
+        padding-bottom: 5px !important;
+    }
+
+    .ortho-accueil-slider img {
+        max-height: 480px;
+        max-width: 433px;
+    }
+
+    .left svg, .right svg {
+        width: 100%;
+        position: unset;
+    }
+    .ortho-service-action-text h2:lang(de-DE) {
+        font-size: 40px !important;
+        line-height: 46px !important;
+    }
+
+    .ortho-accueil-service h3:lang(de-DE) {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --container-width-s: 700px;
+        --container-width-m: 940px;
+    }
+
+    .custom-logo-link {
+        height: 30px;
+    }
+
+    .ortho-accueil-slider img {
+        max-height: 480px;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --container-width-s: 100%;
+        --container-width-m: 100%;
+    }
+
+    .ortho-articles-infos.simple {
+    	flex-wrap: wrap;
+    }
+
+    .ortho-articles-infos.simple .article-txt {
+    	width: 100%;
+	margin-bottom: 20px;
+    }
+
+    .ortho-articles-infos.simple .news-slider {
+    	width: 100%;
+    }
+
+    .complex .news-slider {
+    	width: 100%;
+    }
+
+    .left svg {
+        transform: translateX(0);
+    }
+
+    .ortho-accueil-chiffre {
+        max-width: unset;
+    }
+
+    .ortho-accueil-slider img {
+        max-height: 480px;
+        max-width: 720px;
+    }
+
+    .unmute {
+        left: 0;
+        top: 0;
+    }
+
+    .wpml-ls-item {
+        width: 50%;
+        text-align: center;
+    }
+
+    .uptoyou {
+        font-size: 12px;
+    }
+
+    .wpml-ls-menu-item .nav-link {
+        padding: 0 !important;
+    }
+
+    .el__footer-menu .di__padding-small {
+        padding-bottom: 20px;
+    }
+
+    .burger-mobile {
+        display: block;
+    }
+
+    .burger-mobile div {
+        z-index: 10;
+        position: relative;
+        top: 3px;
+        height: 2px;
+        width: 28px;
+        background-color: var(--accent-color);
+        margin-bottom: 5px;
+        transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right;
+        border-radius: 2px;
+    }
+
+    .burger-mobile.open div:first-child {
+        transform: rotate(45deg);
+        top: 7px;
+        width: 32px;
+    }
+
+    .burger-mobile.open div:nth-child(2) {
+        width: 0;
+        transform: rotate(45deg);
+    }
+
+    .burger-mobile.open div:last-child {
+        transform: rotate(-45deg);
+        top: -7px;
+        width: 32px;
+    }
+
+    .collapse.navbar-collapse {
+        display: none !important;
+    }
+
+
+    .collapse.navbar-collapse.show {
+        display: block !important;
+        position: absolute;
+        top: 100%;
+        padding-top: 140px;
+        display: flex;
+        right: 0;
+        background-color: var(--accent-color);
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 5px 20px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar.sticky {
+        padding: 5px 20px;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top: 5px;
+        width: 100vw;
+    }
+    
+    .admin-bar.logged-in .navbar.sticky {
+        padding-top: 40px;
+    }
+
+    body .sticky {
+        padding-top: 40px;
+    }
+
+    .el__nav-bar {
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 0 !important;
+    }
+
+    .navbar #mainNavbar {
+        margin-left: 0px;
+        padding-top: 20px;
+        height: 100vh;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 22px;
+        margin: 20px 0;
+    }
+
+    .sticky .collapse.navbar-collapse.show {
+        top: 100%;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child {
+        display: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link.active {
+        color: var(--basic-color);
+    }
+    
+    .contact-mobile .calendar-mobile {
+        padding: 7px 10px;
+        margin: 0 20px;
+        height: 37px;
+        width: 37px;
+        border-radius: 50px;
+        color: var(--basic-color);
+        background-color: var(--accent-color);
+        transition: all .5s ease;
+    }
+
+    .contact-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none !important;
+    }
+
+    .contact-mobile p {
+        font-family: var(--accent-font);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+
+    #menu-header, #menu-header-de {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .misc_pages {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    span.le_dash {
+        display:none;
+    }
+
+    .el__copyrights {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .rc-anchor {
+        width: 100%;
+    }
+
+    /* .g-recaptcha > div, .g-recaptcha > div > div > iframe {
+        width: 100% !important;
+        margin: 0 auto !important;
+    } */
+
+    /*****
+    CONTAINER
+    */
+
+    .di__container-big, .di__container-small {
+        width: 80%;
+    }
+
+    .di__padding-basic {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    .di__padding-top-regular {
+        padding-top: 32px;
+    }
+
+    .di__padding-regular {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    /*****
+    TYPOS
+    */
+
+    h1, .ty__h1 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    h2, .ty__h2, .nf-form-title h3 {
+        font-size: 42px;
+        line-height: 42px;
+    }
+    
+    .nf-form-title h3 {
+       margin-bottom: 32px;
+    }
+
+    .ortho-accueil-chiffre div {
+        font-size: 36px;
+    }
+
+    .ortho-h3-bubble {
+        width: 35px;
+        height: 35px;
+        bottom: -18px;
+    }
+
+    h3, .ty__h3 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    h4, .ty__h4 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    h5, .ty__h5 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    h6, .ty__h6 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    p, .ty__p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    a.el__btn, .nf-form-content button, .nf-form-content input[type=button], .nf-form-content input[type=submit] {
+        font-size: 16px;
+        width: max-content !important;
+        padding: 0px 21px;
+    }
+
+    /* ACCUEIL */
+
+    .sec__bg-cover {
+        height: 100vh;
+        max-height: 520px;
+        background-size: cover;
+        background-position-x: 40%;
+    }
+
+    .ortho-accueil-chiffre div {
+        width: 145px;
+        height: auto;
+    }
+
+    .ortho-accueil-services {
+        height: 100%;
+    }
+
+    .ortho-accueil-service-picto {
+        width: 68px;
+        height: 68px;
+    }
+
+    .ortho-accueil-chiffres {
+        row-gap: 42px;
+    }
+
+    .ortho-accueil-chiffre {
+        justify-content: center;
+        width: 45%;
+    }
+
+    .el__article {
+        flex-direction: column;
+    }
+
+    .el__article .ortho-articles-infos {
+        margin-left: 0;
+    }
+
+    .ortho-accueil-slider img {
+        margin-bottom: 42px;
+    }
+
+    .ortho-articles-infos h3 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .ortho-articles-infos .read-more {
+        margin-top: 42px;
+    }
+
+    .news-slider {
+        padding-bottom: 42px;
+    }
+
+    .ortho-accueil-slider {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ortho-accueil-slider a.el__btn {
+        margin: unset;
+        align-self: flex-end;
+    }
+
+    .jobs .ortho-articles-infos .el__btn-accent {
+        position: relative;
+        margin-top: 22px;
+    }
+
+     /* FOOTER */
+
+     .el__prescripteurs-list > div {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .el__useful, .el__ordo, .el__catalogue  {
+        padding-left: 22px;
+        margin-bottom: 22px;
+    }
+
+    .el__catalogue  {
+        align-items: flex-start;
+    }
+
+    .el__footer-link-img {
+        margin-bottom: 12px;
+    }
+
+    .el__useful, .el__ordo {
+        align-items: start;
+    }
+
+    .useful-links, .ordo_list {
+        padding-left: 20px;
+    }
+
+    .el__prescripteurs-list a {
+        font-family: var(--accent-font-light);
+    }
+
+    #menu-footer {
+        padding: 0 !important;
+        margin: 0 !important;
+        flex-direction: row !important;
+        margin-left: 0% !important;
+    }
+
+  .el__menu-footer {
+  	justify-content: space-between;
+  }
+
+    #menu-footer .nav-link, .socials_newsletter a {
+        padding: 0;
+        font-family: var(--accent-font-light);
+    }
+
+    .cgv 
+    {
+        margin-left: 0 !important;
+    }
+
+    .socials_pictos {
+        margin-right: 0;
+    }
+
+    /* SERVICES LISTING */
+
+    .ortho-service-action {
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    .ortho-accueil-chiffre h3 {
+        text-align: center;
+    }
+
+    .ortho-service-action-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ortho-service-action-text .ortho-h3-line {
+        position: absolute;
+        top: 92px;
+        left: 0;
+        width: 30%;
+    }
+
+    .left .ortho-service-action-text .ortho-h3-line {
+        left: unset;
+        right: -47px;
+    }
+
+    .ortho-services-listing .ortho-service-action-text, .ortho-services-listing .ortho-service-action-img {
+        width: 80%;
+    }
+
+    .ortho-service-action-text, .left .ortho-service-action-text {
+        padding: 10% 0;
+    }
+
+    .ortho-services-listing a.el__btn {
+        align-self: flex-end;
+    }
+
+    .ortho-services-listing div:last-child {
+        padding-bottom: 0;
+    }
+
+    /* PAGES SERVICES */
+
+    .ortho-service-header {
+        height: 100vh;
+        max-height: 540px;
+        background-size: cover;
+        background-position-x: 20%;
+    }
+
+    .ortho-service-intro {
+        padding-top: 42px;
+    }
+
+    .ortho-service-header .ortho-service-picto {
+        width: 180px;
+        height: 180px;
+        bottom: -8%;
+        right: 5%;
+    }
+
+    .ortho-service-outro p {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: left;
+    }
+
+    /* PAGES CONTACT */
+
+    .ortho-contact-location-link p {
+        color: var(--main-color);
+        text-decoration: none;
+        font-family: var(--accent-font);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 32px;
+        cursor: pointer;
+    }
+
+    .ortho-contact-location .di__padding-small {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .ortho-contact-infos {
+        flex-direction: column;
+    }
+
+    .ortho-contact-infos-adress {
+        margin-bottom: 18px;
+    }
+
+    .ortho-contact-infos-adress p:last-child {
+        margin-top: 18px;
+    }
+
+    .ortho-contact-service .ortho-contact-service-img {
+        width: 58px;
+        height: 58px;
+        margin-right: 10px;
+    }
+
+    .ortho-actu-listing .news {
+        flex-direction: column;
+        margin-bottom: 64px;
+    }
+
+    .ortho-actu-listing-title {
+        padding-bottom: 0;
+    }
+
+    .ortho-actu-listing .news img {
+        width: 100%;
+        margin-bottom: 42px;
+    }
+
+    .ortho-actu-listing .news .ortho-articles-infos {
+        margin-left: 0;
+    }
+
+    .ortho-articles-infos .read-more {
+        margin-top: 16px;
+    }
+
+    .modal__content {
+        padding: 1rem;
+        width: 80%;
+    }
+
+    .ortho-contact-infos-rdv {
+        padding: 10px 0;
+    }
+
+    .ortho-contact-picto {
+        margin: 0;
+        margin-right: 10px;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child a {
+        font-size: 22px !important;
+    }
+
+    #menu-item-275 {
+        background-color: var(--main-color);
+        padding: 0 20px !important;
+        border-radius: 50px;
+        gap: 0px;
+    }
+
+    #menu-item-1042 {
+        background-color: var(--main-color);
+        padding: 0 45px !important;
+        margin: 0 auto;
+    }
+
+    .navbar-light .navbar-nav .menu-item:last-child::before {
+        height: 21px;
+        margin-right: 10px;
+    }
+
+    .jobs .ortho-articles-infos .ortho-articles-text p {
+        width: 85%;
+    }
+
+   .ortho-service-action.di__padding-small {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+   }
+
+   .jobs.di__padding-x-small {
+        padding-top: 30px;
+   }
+
+   .page-template-page-actualites .di__padding-regular {
+        padding-top: 0;
+   }
+
+   .ortho-contact-infos-adress, .ortho-contact-infos-contact {
+        width: 100%;
+    }   
+
+    .navbar-nav .menu-item:lang(de-DE) {
+        text-align: center;
+    }
+
+    #menu-footer-de-2 {
+        padding-left: 0;
+    }
+
+    .ortho-accueil-service > .di__flex-center {
+        flex-direction: column  ;
+    }
+
+    .succursale-card {
+        padding: 30px;
+        width: 48%;
+        height: 350px;
+    }
+
+    .ortho-contact-picto .contact-img {
+        width: 33px;
+        height: 33px;
+    }
+    
+}
+
+@media (max-width: 762px) {
+
+    .ortho-accueil-service {
+        width: 45%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .ortho-contact-location .di__container-big {
+        width: 100%;
+    }
+    .ortho-contact-location .di__container-big .el__canton .canton {
+        margin: 0 10px;
+    }
+    .ortho-contact-location .di__container-big .el__canton .canton p {
+        font-size: 25px;
+    }
+
+    .ortho-accueil-service h3:lang(de-DE) {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 575px) {
+
+    .jobs .ortho-articles-infos .ortho-articles-text p {
+        width: 100%;
+    }
+
+    .ortho-accueil-service a {
+        margin: 0 0px;
+        text-align: center;
+    }
+
+    .el__video-mobile {
+        display: block;
+    }
+
+    .el__video {
+        display: none;
+    }
+
+    .modal__content p {
+        text-align: left;
+        margin: 10px 0;
+        line-height: 20px;
+        font-size: 14px;
+    }
+
+    .modal__content {
+        padding: 1rem;
+        width: 80%;
+    }
+
+    .ortho-accueil-chiffre {
+        width: 100%;
+    }
+
+    div.close-modal {
+        width: 100%;
+    }
+
+    .modal {
+        height: 100%;
+    }
+
+    .ortho-contact-location .di__container-big .el__canton .canton p {
+        font-size: 20px;
+    }
+
+    .ortho-contact-location .di__container-big .el__canton .canton {
+        margin: 0 5px;
+    }
+
+    .ortho-contact-picto .contact-img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .succursale-card {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .ortho-contact-location .di__container-big .el__canton .canton p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .ortho-contact-location .di__padding-small {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .ortho-contact-location .ortho-contact-location-link {
+        margin: 0 15px;
+    }
+
+    .ortho-contact-location-link p {
+        font-size: 14px;
+    }
+
+    .ortho-accueil-service {
+        width: 100%;
+    }
+
+    .contact-mobile .calendar-mobile {
+        padding: 4px 8px;
+        margin: 0 5px;
+        height: 30px;
+        width: 30px;
+    }
+
+    h2, .ty__h2 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .succursale-card {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .ortho-contact-location .di__container-big .el__canton .canton p {
+        font-size: 15px;
+    }
+
+    .recaptcha-wrap .nf-field-label {
+        text-align: right;
+    }
+
+    .g-recaptcha iframe {
+        transform: scale(0.6);
+        float: left;
+    }
+
+    .g-recaptcha > div {
+        width: 273px !important;
+    }
+}
