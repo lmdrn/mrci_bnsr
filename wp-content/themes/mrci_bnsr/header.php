@@ -13,21 +13,9 @@
 <?php wp_body_open(); ?>
 
 <header id="top-header">
-    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-light el__section-dark">
-            <?php if (has_custom_logo()) :
-                the_custom_logo();
-            else :
-                echo get_bloginfo('name');
-            endif ?>
-
-        <div class="burger-mobile">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
+    <nav id="navbar_top" class="black-bg navbar navbar-expand-lg navbar-light el__section-dark">
         <a href="<?= get_home_url(); ?>/contact" class="contact-mobile">
-            <p><?php _e('Contact', 'mrci_bnsr')?></p>
+            <p style="color:white;"><?php _e('Contact', 'mrci_bnsr')?></p>
             </a>
 
         <div class="el__nav-bar">
