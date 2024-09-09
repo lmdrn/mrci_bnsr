@@ -73,7 +73,7 @@ function mrci_bnsr_scripts()
     wp_enqueue_script('bodymovin animations', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js', array(), null, true);
 
     // google fonts [CDN]
-    wp_enqueue_style('fonts-google', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700&display=swap', array(), null);
+    wp_enqueue_style('fonts-google', 'https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap', array(), null);
 
     // font awesome 4.7.0 [CDN]
     wp_enqueue_style('font-awesome-4.7', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), null);

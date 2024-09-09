@@ -13,7 +13,7 @@
 <?php wp_body_open(); ?>
 
 <header id="top-header">
-    <nav id="navbar_top" class="black-bg navbar navbar-expand-lg navbar-light el__section-dark">
+    <nav id="navbar_top" class="header black-bg navbar navbar-expand-lg navbar-light el__section-dark">
         <a href="<?= get_home_url(); ?>/contact" class="contact-mobile">
             <p style="color:white;"><?php _e('Contact', 'mrci_bnsr')?></p>
             </a>

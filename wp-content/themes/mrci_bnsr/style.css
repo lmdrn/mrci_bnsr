@@ -58,24 +58,26 @@ section {
     padding: var(--margin-m) 0;
 }
 
-
 p {
-    margin-top: 0;
-    margin-bottom: 0;
+    	margin-top: 0;
+    	margin-bottom: 0;
+	font-family: "Roboto Mono", monospace;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
+	font-family: "Roboto Mono", monospace;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
 }
 
 .black-bg
 {
 	background-color: black;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	color: white;
-	padding: 10px 20px;
 }
 
 .front-page-bg
@@ -93,6 +95,20 @@ img
 	height: 100%;
 	object-fit: cover;
 	padding: 100px;
+	opacity: 0;
+	transform: scale(0.8); /* Start smaller for the zoom effect */
+	animation: fadeZoomIn 2s ease forwards; /* Apply the animation on load */
+}
+
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Initial zoom-out */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Final size (zoomed in) */
+    }
 }
 
 .img-container
@@ -102,6 +118,7 @@ img
 
 .button 
 {
+	display: inline-block;
 	color: white;
 }
 
@@ -117,11 +134,13 @@ img
 	text-decoration: none;
 }
 
-.btn-container
+.btn-container .button
 {
 	border: 1px solid white;
 	padding: 30px 50px;
-	margin-bottom: 50px;
+ 	-webkit-transition: all 0.2s linear;
+    	-ms-transition: all 0.2s linear;
+    	transition: all 0.2s linear;
 }
 
 .btn-container:hover
@@ -132,6 +151,30 @@ img
     	-ms-transition: all 0.2s linear;
     	transition: all 0.2s linear;
 	cursor: pointer;
+}
+
+.header
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	padding: 50px 20px;
+	text-align: center;
+}
+
+.footer p, .footer a 
+{
+	color: white;
+}
+
+.footer
+{
+	padding: 100px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 /* RESPONSIVE */
